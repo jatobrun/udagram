@@ -1,0 +1,49 @@
+{
+	"id": "0c106c20-a341-41a0-9736-f9b1fa275b87",
+	"name": "cloud-cdnd-c2-final",
+	"timestamp": "2020-05-17T22:50:09.228Z",
+	"collection_id": "07d9c9ba-16ab-4bf4-b06e-7349d6cc1f9c",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 1,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6598a01f-c96e-42d1-a7ef-074585bb4b1f",
+			"name": "http://image-filter-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://timedotcom.files.wordpress.com/2019/03/kitten-report.jpg",
+			"url": "http://image-filter-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/5/59/Facultat_Filosofia_URL.JPG",
+			"time": 686,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				686
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 686,
+	"collection": {
+		"requests": [
+			{
+				"id": "6598a01f-c96e-42d1-a7ef-074585bb4b1f",
+				"method": "GET"
+			}
+		]
+	}
+}
