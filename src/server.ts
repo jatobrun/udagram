@@ -1,6 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import {filterImageFromURL, deleteLocalFiles} from './util/util';
+import {Request, Response } from 'express';
 const isImageUrl = require('is-image-url');
 (async () => {
 
@@ -28,14 +29,14 @@ const isImageUrl = require('is-image-url');
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
 
   /**************************************************************************** */
-  app.get("/filteredimage", async (req, res) =>{
-    var url = req.query.image_url;
+  app.get("/filteredimage", async (req: Request, res: Response) =>{
+    let url = req.query.image_url;
     if (!isImageUrl(url)){
       res.send('Malformed URL!..Try again with a proper image URL')
 
     }else{
       console.log(url, typeof url);
-      var path = await filterImageFromURL(url);
+      let path = await filterImageFromURL(url);
       res.status(200).sendFile(path , () =>
           deleteLocalFiles([path])
         );
@@ -46,7 +47,7 @@ const isImageUrl = require('is-image-url');
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( req: Request, res: Response ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
